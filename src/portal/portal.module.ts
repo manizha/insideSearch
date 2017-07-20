@@ -1,16 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
+import { SiteComponent } from './components/component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    
   ],
   imports: [
     BrowserModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    SiteComponent
+  ],
+  bootstrap: [
+    SiteComponent
+  ]
 })
-export class AppModule { }
+
+export class PortalModule { }

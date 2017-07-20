@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1230px" height="204px" viewBox="0 0 1230 204" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>placeholder_250x130 copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="1230" height="204"></rect>
+    </defs>
+    <g id="CSP" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="placeholder_250x130-copy">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#026E91" xlink:href="#path-1"></use>
+            <g id="Group-4" mask="url(#mask-2)" opacity="0.310235507">
+                <g transform="translate(-53.000000, -27.000000)" id="Group-16">
+                    <g>
+                        <circle id="Oval" fill="#015A77" cx="1202" cy="23" r="21"></circle>
+                        <path d="M1210,25 L1282.5,148.5" id="Line" stroke="#005B79" stroke-width="4" stroke-linecap="square"></path>
+                        <path d="M983,237 L1202,29" id="Line-Copy" stroke="#005B79" stroke-width="4" stroke-linecap="square"></path>
+                        <path d="M920,194 L1192,29" id="Line-Copy-4" stroke="#005B79" stroke-width="4" stroke-linecap="square"></path>
+                        <path d="M768,8 L946,231" id="Line-Copy-5" stroke="#005B79" stroke-width="4" stroke-linecap="square"></path>
+                        <path d="M701,12 L522,240" id="Line-Copy-6" stroke="#005B79" stroke-width="4" stroke-linecap="square"></path>
+                        <path d="M533,243 L35,93" id="Line-Copy-8" stroke="#005B79" stroke-width="4" stroke-linecap="square"></path>
+                        <path d="M315,319 L0,127" id="Line-Copy-11" stroke="#005B79" stroke-width="4" stroke-linecap="square"></path>
+                        <path d="M382,62 L327,6" id="Line-Copy-9" stroke="#005B79" stroke-width="4" stroke-linecap="square"></path>
+                        <path d="M438,0 L382,63" id="Line-Copy-10" stroke="#005B79" stroke-width="4" stroke-linecap="square"></path>
+                        <path d="M586,159 L631,239" id="Line-Copy-7" stroke="#005B79" stroke-width="4" stroke-linecap="square"></path>
+                        <path d="M1051,240 L1200,33" id="Line-Copy-2" stroke="#005B79" stroke-width="4" stroke-linecap="square"></path>
+                        <path d="M1119,237 L1201,32" id="Line-Copy-3" stroke="#005B79" stroke-width="4" stroke-linecap="square"></path>
+                        <path d="M1207,32 L1199,239.5" id="Line" stroke="#005B79" stroke-width="4" stroke-linecap="square"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

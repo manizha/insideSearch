@@ -2,13 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>SupportPortal</title>
+  <title>Support Portal</title>
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700" rel="stylesheet">
+  <!--COVEO RESULTS ICONS: font-awesome -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>    
 </head>
 <body>
-  <app-root></app-root>
+  <div class="off-canvas-wrapper">
+    <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
+      <!--{{> off-canvas}}-->
+    </div>
+
+    <div class="off-canvas-content" data-off-canvas-content>
+      
+      <div data-sticky-container>
+        <div class="sticky" data-sticky data-margin-top="0">
+          <site-header></site-header>
+        </div>
+      </div>
+
+      <div class="page-wrapper">
+        <div class="stage">
+
+        </div>
+      </div>
+
+      <site-footer></site-footer>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    //$(document).foundation();
+  </script>
+
 </body>
 </html>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="13px" viewBox="0 0 15 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45 (43475) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Case-MGMT" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="case-details-files" transform="translate(-670.000000, -409.000000)" fill-rule="nonzero" fill="#01ABDB">
+            <g id="Group-8" transform="translate(670.000000, 407.000000)">
+                <g id="tiny-icons/file" transform="translate(0.000000, 2.000000)">
+                    <path d="M14.4326012,1.62023391 L3.92732684,1.62023391 L3.92732684,0.552892227 C3.92732684,0.279307697 3.70973271,0.057587619 3.44209567,0.057587619 L0.572458545,0.057587619 C0.304821505,0.057587619 0.0879214286,0.279307697 0.0879214286,0.552892227 L0.0879214286,12.2183008 C0.0879214286,12.4904664 0.304821505,12.712896 0.572458545,12.712896 L14.4333842,12.712896 C14.7010213,12.712896 14.9179214,12.4911759 14.9179214,12.2183008 L14.9179214,2.11555671 C14.9179214,1.84197218 14.7010213,1.6202521 14.4326902,1.6202521 L14.4326012,1.62023391 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

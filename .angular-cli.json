@@ -5,22 +5,55 @@
   },
   "apps": [
     {
+      "name": "core",
       "root": "src",
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico"
+        "favicon.ico",
+        "search.html"
       ],
       "index": "index.html",
-      "main": "main.ts",
+      "main": "core.ts",
       "polyfills": "polyfills.ts",
       "test": "test.ts",
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
-      "prefix": "app",
+      "prefix": "core",
       "styles": [
+        "./assets/css/app.css",
+        "./assets/css-coveo/coveofullsearchnewdesign.css",
         "styles.css"
       ],
+      "scripts": [
+        "./assets/js/app.js",
+        "./assets/js-vendor/CoveoJsSearch.js",
+        "./assets/js-vendor/templatesNew.js",
+        "./assets/js/coveo-context.js",
+        "./assets/js/coveo-config.js",
+        "./assets/js/app-coveo.js",
+        "./assets/js/coveo-angular.js",
+        "./assets/js-vendor/URI.js"
+      ],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "qa": "environments/environment.qa.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    },
+    {
+      "name": "portal",
+      "root": "src",
+      "outDir": "dist",
+      "index": "index.html",
+      "main": "portal.ts",
+      "polyfills": "polyfills.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.app.json",
+      "testTsconfig": "tsconfig.spec.json",
+      "prefix": "portal",
+      "styles": [],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {
