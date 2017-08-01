@@ -12,7 +12,7 @@
 
     //searchPageUrl: used by site-wide searchbox to redirect user to the search page.
     /*** CHANGE searchPageUrl upon integration ***/
-    searchPageUrl: (location.hostname === 'localhost') ? 'search.html' : 'http://contracts.paloaltonetworks.local/search.html',
+    searchPageUrl: (location.hostname === 'localhost') ? 'search.html' : 'https://contracts.paloaltonetworks.local/search.html',
 
     //token: searchtoken used to authenticate search user to Coveo Index. 
     /*** CHANGE token  upon integration 
