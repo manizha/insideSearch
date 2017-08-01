@@ -48,7 +48,7 @@ function coveoAngularAdapter() {
             //TODO: replace URI
             var parseOld = URI.parse(oldUrl);
 
-            if (location.pathname !== "/search.html") {
+            if (parseNew.path === location.pathname) { //if (location.pathname !== "/search.html") {
                 handleHashChange(parseNew.fragment);
             }
         }).trigger('hashchange');
@@ -98,16 +98,16 @@ function coveoAngularAdapter() {
         this.coveoIgnoreNextHashChange = true;
 
         // Comments By LK On 07/20
-        /*var parsedState = parseState(fragment);
+        var parsedState = parseState(fragment);
         var defaultAttributes = Coveo.state(searchInterface).defaultAttributes;
         Coveo.state(searchInterface, Coveo._.defaults(parsedState, defaultAttributes));
-        Coveo.executeQuery(searchInterface);*/
-        var newState = parseState(fragment);
+        Coveo.executeQuery(searchInterface);
+        /*var newState = parseState(fragment);
 
         var search = $('#search');
         var currentState = search.coveo('state');
         search.coveo('state', _.defaults(newState, currentState.defaultAttributes));
-        search.coveo('executeQuery');
+        search.coveo('executeQuery');*/
     }
 }
 

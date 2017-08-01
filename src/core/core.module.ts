@@ -4,13 +4,15 @@ import { HeaderComponent } from './components/header/header.component';
 import { TopNavComponent } from './components/topnav/topnav.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SearchComponent } from './components/search/search.component';
+import { SearchResultsComponent } from './components/searchresults/searchresults.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,    
     TopNavComponent,
-    SearchComponent
+    SearchComponent,
+    SearchResultsComponent
   ],
   imports: [
     BrowserModule
@@ -22,7 +24,8 @@ import { SearchComponent } from './components/search/search.component';
     HeaderComponent,
     FooterComponent,    
     TopNavComponent,
-    SearchComponent
+    SearchComponent,
+    SearchResultsComponent
   ]
 })
 export class CoreModule { 
@@ -41,6 +44,10 @@ export class CoreModule {
 
     if(document.querySelector('coveo-search')) {
       appRef.bootstrap(SearchComponent);
+    }
+
+    if(document.querySelector('coveo-search-results')) {
+      appRef.bootstrap(SearchResultsComponent);
     }
   }
 }

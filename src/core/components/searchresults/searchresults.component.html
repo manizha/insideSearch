@@ -1,4 +1,148 @@
-<div id="searchbox">
-	<div class="CoveoSearchbox" data-add-search-button="true" data-enable-omnibox="true" data-enable-query-suggest-addon="true"></div>
-	<span class="CoveoAnalytics"></span>
+<div class="grid-container">
+	<div class="grid-x grid-padding-x">
+		<div class="cell">
+		<div id="search" class='CoveoSearchInterface' data-enable-history="false" data-design="new">
+			<span class="CoveoAnalytics"></span>
+			<div class="CoveoFoldingForThread" data-field="@foldfoldingfield" data-parent-field="@foldparentfield" data-child-field="@foldchildfield" data-rearrange="date ascending" data-enable-expand="true" data-range="2"></div>
+			<div class="coveo-main-section">
+		
+		
+			<div class="coveo-facet-column">
+			<div class="coveo__facetheader"><h2 class="subheader coveo--titleheader">Filter your Results </h2></div>
+				<div class="CoveoFacet" data-title="By Source" data-field="@source" id="source"></div>
+				<div class="CoveoFacet" data-title="By Category" data-field="@licategoryshorttitle" data-enable-collapse='true' id="category" data-tab="Lithium"></div>
+				<div class="CoveoFacet custom-liboard" data-title="By Board" data-field="@liboardshorttitle" data-tab="Lithium"></div>
+				<div class="CoveoFacet" data-title="Tags" data-field="@limessagetagsfacet" data-is-multi-value-field='true'></div>
+				<div class="CoveoFacet" data-title="Labels" data-field="@litopiclabelsfacet" data-is-multi-value-field='true'></div>
+				<div class="CoveoFacet custom-liauthor" data-title="By Author" data-field="@limessageauthor" data-tab="Lithium"></div>
+				<div class='CoveoFacetRange' data-title="By Date" data-field='@sysdate' id="byDate"></div>
+				<div class="CoveoFacet" data-title="By Metadata" data-field="@libymetadata" data-tab="Lithium"></div>
+				<div class="CoveoFacet" data-title="By Type of Post" data-field="@liboardinteractionstyle" data-tab="Lithium"></div>
+				<div class="CoveoFacet" data-title="File Type" data-field="@filetype"></div>
+				<div class="CoveoFacet" data-title="By Year" data-field="@year" data-tab="Lithium"></div>
+				<div class="CoveoFacet" data-title="By Month" data-field="@month" data-tab="Lithium"></div>
+			</div>
+		
+			<div class="coveo-results-column content-card">
+				<h1 class="section-header"><strong><span class="CoveoQueryPropertyOutput" data-property="totalCountFiltered"></span> Results</strong> For '<span class="CoveoQueryPropertyOutput" data-property="query"></span>' across Palo Alto Networks.</h1>
+				<div class="CoveoBreadcrumb"></div>
+				<div class="coveo-results-header coveo__results-header">
+				<div class="coveo-sort-section">
+					<span class="CoveoSort" data-sort-criteria="relevancy" data-caption="Relevance"></span>
+					<span class="CoveoSort" data-sort-criteria="date descending,date ascending" data-caption="Date"></span>
+				</div>
+				<div class="coveo-summary-section">
+					<div class="CoveoResultsPerPage"></div>
+					<span class="CoveoQuerySummary"></span>
+					<div class="CoveoPager"></div>
+				</div>
+				</div>
+				<div class="CoveoHiddenQuery"></div>
+				<div class="CoveoDidYouMean"></div>
+				<div class="CoveoErrorReport"></div>
+				<div class="CoveoResultList" data-layout="list" data-wait-animation="fade" data-auto-select-fields-to-include="true">
+				<script id="Lithium2" class="result-template" type="text/underscore">
+					<div class="coveo-result-frame coveo__result-frame templatelithium">
+						<div class="coveo-result-row">
+				
+						<div class="coveo-result-cell" style="padding-left:15px">
+							<div class="coveo-result-row">
+							<div class="coveo-result-cell" style="font-size:18px">
+								<a class="CoveoResultLink" data-always-open-in-new-window='true'></a>
+							</div>
+							<% if(raw.syssourcetype !== "Lithium") { %>
+								<div class="coveo-result-cell">
+								<span class="CoveoFieldValue" data-field="@date" data-helper="dateTime"></span>
+								</div>
+							<% } %>
+							</div>
+				
+							<div class="coveo-result-row  coveo__result-body">
+				
+								<div class="coveo-result-cell coveo__excerpt">
+									<div class="CoveoExcerpt">
+									</div>
+								</div>
+				
+				
+								<div class="coveo-result-row coveo__badgesection">
+									<div class="coveo-result-cell">
+										<div class="CoveoBadge" data-field="@licategoryshorttitle"></div>
+										<div class="CoveoBadge" data-field="@liboardshorttitle"></div>
+										<div class="CoveoBadge" data-field="@litopiclabelsfacet" data-split-values='true' data-display-separator=' '></div>
+									</div>
+								</div>
+				
+								<div className="coveo__resultstats-section">
+								<% if(raw.syssourcetype == "Lithium") { %>
+									<div class="coveo-result-cell lia-summary-view-statistics-wrapper">
+									<div class="coveo__resultstat">
+										<% if (raw.limessageissolution === 'True'){ %>
+											<span class="article-tag__solved">Solved</span>
+										<% } %>
+									</div>
+									<div class="coveo__resultstat">
+										<span class="lia-summary-view-statistic-post-date article-tag__date"><%- dateTime(raw.sysdate) %></span>
+									</div>
+									<div class="coveo__resultstat">
+										<% if(raw.limessagekudoscount != '0') { %>
+											<span class="CoveoFieldValue lia-summary-view-statistic-kudos article-tag__likes" data-field="@limessagekudoscount"></span><span class="article-tag__text"> Likes</span>
+										<% } %>
+									</div>
+									<div class="coveo__resultstat">
+										<span class="CoveoFieldValue lia-summary-view-statistic-views article-tag__views" data-field="@litopicviewcount"></span><span class="article-tag__text"> Views</span>
+									</div>
+									</div>
+								<%}%>
+								</div>
+							</div>
+				
+						<!-- <% if(_.size(childResults)>0) {%>  -->
+						<span class="CoveoResultFolding" data-result-template-id="LithiumChildResult"></span>
+						<!-- <% } %> -->
+						</div>
+					</div>
+					</div>
+				</script>
+				<script id="LithiumChildResult" type="text/underscore">
+					<div class="coveo-result-frame coveo-email-result">
+					<div class="coveo-result-row">
+						<div class="coveo-result-cell">
+						<div class="coveo-result-row">
+							<div class="coveo-result-cell">
+							<% if (raw.limessageissolution == 'False'){ %>
+							<div class="lithium-icons post">
+							<% } else { %>
+							<div class="lithium-icons postacc">
+							<% } %>
+							</div>
+							<a class="CoveoResultLink" data-always-open-in-new-window='true'></a>
+							</div>
+							<div class="coveo-result-cell">
+							<span class="CoveoFieldValue" data-field="@limessageposttime" data-helper="emailDateTime" data-helper-options="{predefinedFormat: 'yyyy/MM/dd'}"></span>
+							</div>
+						</div>
+						<div class="coveo-result-row">
+							<div class="coveo-result-cell">
+							<div class="CoveoExcerpt">
+							</div>
+							</div>
+						</div>
+						<div class="coveo-result-row">
+							<div class="coveo-result-cell">
+							<span class="CoveoResultAttachments" data-result-template-id="EmailResultAttachment"></span>
+							</div>
+						</div>
+						</div>
+					</div>
+					</div>
+				</script>
+				</div>
+				<div class="CoveoPager"></div>
+				<div class="CoveoLogo"></div>
+			</div>
+			</div>
+		</div>
+		</div>
+	</div>
 </div>

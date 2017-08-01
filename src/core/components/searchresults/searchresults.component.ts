@@ -1,4 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+declare var $: any
+declare var Coveo: any
 
 @Component({
   selector: 'coveo-search-results',
@@ -8,4 +10,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 })
 export class SearchResultsComponent {
 
+  ngAfterViewInit() {
+    
+  }
 }

@@ -35,5 +35,8 @@
           Panorama: false
         }
       }
-    }
+    },
+
+    //restEndpointUrl
+    restEndpointUrl: 'https://platform.cloud.coveo.com/rest/search'
   }

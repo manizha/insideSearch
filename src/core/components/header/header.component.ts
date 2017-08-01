@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { environment } from '../../../environments/environment';
+declare var $: any;
 
 @Component({
   selector: 'site-header',
@@ -11,4 +12,8 @@ import { environment } from '../../../environments/environment';
 export class HeaderComponent {
   logo = 'assets/images/logo.png';
   baseUrl = environment.baseUrl;
+
+  ngAfterViewInit(){
+    $(document).foundation();
+  }
 }

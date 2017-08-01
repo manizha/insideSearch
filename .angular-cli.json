@@ -21,17 +21,11 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "core",
       "styles": [
-        "./assets/css/app.css",
-        "./assets/css-coveo/coveofullsearchnewdesign.css",
         "styles.css"
       ],
-      "scripts": [
-        "./assets/js/app.js",
-        "./assets/js-vendor/CoveoJsSearch.js",
-        "./assets/js-vendor/templatesNew.js",
+      "scripts": [  
         "./assets/js/coveo-context.js",
         "./assets/js/coveo-config.js",
-        "./assets/js/app-coveo.js",
         "./assets/js/coveo-angular.js",
         "./assets/js-vendor/URI.js"
       ],

@@ -5,5 +5,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: ''
+  baseUrl: '',
+  panwHomeUrl: 'https://www.paloaltonetworks.com/',
+  liveCommunityUrl: 'https://live.paloaltonetworks.com/'
 };
