@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import { environment } from '../../../environments/environment';
 declare var $: any;
 
@@ -9,11 +9,15 @@ declare var $: any;
   encapsulation: ViewEncapsulation.None
 })
 
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   logo = 'assets/images/logo.png';
   baseUrl = environment.baseUrl;
 
-  ngAfterViewInit(){
+  ngOnInit() {
+    
+  }
+
+  ngAfterViewInit() {
     $(document).foundation();
   }
 }

@@ -5,6 +5,7 @@ import { TopNavComponent } from './components/topnav/topnav.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SearchComponent } from './components/search/search.component';
 import { SearchResultsComponent } from './components/searchresults/searchresults.component';
+import { ScriptTemplateComponent } from '../shared/components/scripttemplate/scripttemplate.component';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { SearchResultsComponent } from './components/searchresults/searchresults
     FooterComponent,    
     TopNavComponent,
     SearchComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
+    ScriptTemplateComponent
   ],
   imports: [
     BrowserModule

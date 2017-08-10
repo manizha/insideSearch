@@ -11,6 +11,6 @@ declare var Coveo: any
 export class SearchResultsComponent {
 
   ngAfterViewInit() {
-    
+
   }
 }
