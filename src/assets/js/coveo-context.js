@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function(){
       authentication : 'okta',
       organizationId: CoveoOrganizationID,
       debug: 1,
-      pipleline: "Tek-Talk Searchs"
+      pipleline: "Tek-Talk Search"
     },
   });
 
@@ -37,29 +37,32 @@ document.addEventListener('DOMContentLoaded', function(){
 
   if (coveoSearch) {
     coveoAngularAdapter();
-  }
 
-  Coveo.$$(document.querySelector("#search")).on("preprocessResults", function(e, args) {
-    var connectedUser = args.results.userIdentities[0].name;
-    var instance =
-      Coveo.get(document.querySelector('.CoveoAnalytics'));
-    instance.client.userId = connectedUser;
-  });
-
-  Coveo.$$(document.body).on("doneBuildingQuery", function(e, args) {
-    var query = {
-      q:"@uri",
-      aq:"@sysfiletype=csmessage",
-      numberOfResults:5,
-      pipeline: "PopularArticlesWidget"
-    };
-
-    Coveo.SearchEndpoint.endpoints["default"].search(query).done(function(data) {
-      _.each(data.results, function(result, index) {
-        $("<div><a href='"+ result.clickUri + "'>" + result.title + "</a></div>").appendTo($(MyRelatedResults));
-      });
+    Coveo.$$(document.querySelector("#search")).on("preprocessResults", function(e, args) {
+      var connectedUser = args.results.userIdentities[0].name;
+      var instance =
+        Coveo.get(document.querySelector('.CoveoAnalytics'));
+      instance.client.userId = connectedUser;
     });
-  });
+
+    Coveo.$$(document.body).on("doneBuildingQuery", function(e, args) {
+      if (relatedDiv != null) {
+        var query = {
+          q:"@uri",
+          aq:"@sysfiletype=csmessage",
+          numberOfResults:5,
+          pipeline: "PopularArticlesWidget"
+        };
+
+        Coveo.SearchEndpoint.endpoints["default"].search(query).done(function(data) {
+          $(MyRelatedResults).empty();
+          _.each(data.results, function(result, index) {
+            $("<div><a href='"+ result.clickUri + "'>" + result.title + "</a></div>").appendTo($(MyRelatedResults));
+          });
+        });
+      }
+    });
+  }
 
   Coveo.init(document.body, {
     Facet: {
