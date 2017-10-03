@@ -3,13 +3,13 @@ import { environment } from '../../../environments/environment';
 declare var $: any;
 
 @Component({
-  selector: 'site-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css'],
+  selector: 'site-index',
+  templateUrl: './indexHeader.component.html',
+  styleUrls: ['./indexHeader.component.css'],
   encapsulation: ViewEncapsulation.None
 })
 
-export class HeaderComponent implements OnInit {
+export class IndexHeaderComponent implements OnInit {
   logo = 'assets/images/logo.png';
   baseUrl = environment.baseUrl;
 
@@ -22,13 +22,11 @@ export class HeaderComponent implements OnInit {
   }
 }
 
-$(document).ready(function() {
-  const windowURL = window.location.href;
-
-  if (windowURL.indexOf('tek-talkSearch') !== -1) {
-    $('#show-this').removeAttr('id');
-  }
-
-});
-
-
+// $(document).ready(function() {
+//   const windowURL = window.location.href;
+//
+//   if (windowURL.indexOf('search') !== -1) {
+//     $('#show-this').removeAtr('id');
+//   }
+//
+// });

@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-declare var $: any
-declare var Coveo: any
+import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awesome';
+declare var $: any;
+declare var Coveo: any;
 
 @Component({
   selector: 'coveo-search-results',

@@ -1,10 +1,10 @@
-import { SupportPortalPage } from './app.po';
+import { DiscussionPage } from './app.po';
 
-describe('support-portal App', () => {
-  let page: SupportPortalPage;
+describe('Discussion App', () => {
+  let page: DiscussionPage;
 
   beforeEach(() => {
-    page = new SupportPortalPage();
+    page = new DiscussionPage();
   });
 
   it('should display welcome message', () => {

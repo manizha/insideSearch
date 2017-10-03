@@ -20,6 +20,9 @@ export class ScriptTemplateComponent {
     @Input()
     type: string;
 
+    @Input()
+    dataCondition: string;
+
     @ViewChild('script') script: ElementRef;
 
     constructor(private _sanitizer: DomSanitizer){}
@@ -35,17 +38,21 @@ export class ScriptTemplateComponent {
         if (this.class) {
             script.className = this.class;
         }
-    
+
         script.type = this.type ? this.type : "text/javascript";
 
         if (this.src) {
             script.src = this.src;
         }
 
+      if (this.dataCondition) {
+        script.setAttribute("data-conditon", this.dataCondition);
+      }
+
         if (element.innerHTML) {
             script.innerHTML = _.unescape(element.innerHTML);
         }
-        
+
         var parent = element.parentElement;
         parent.parentElement.replaceChild(script, parent);
     }

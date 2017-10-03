@@ -1,4 +1,6 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit} from '@angular/core';
+import { environment } from '../../../environments/environment';
+declare var $: any;
 
 @Component({
   selector: 'site-footer',
@@ -7,6 +9,16 @@ import { Component, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 
-export class FooterComponent {
-  
+export class FooterComponent implements OnInit {
+  logo = 'assets/images/logo.png';
+  baseUrl = environment.baseUrl;
+
+  ngOnInit() {
+
+  }
+
+  ngAfterViewInit() {
+    $(document).foundation();
+  }
 }
+

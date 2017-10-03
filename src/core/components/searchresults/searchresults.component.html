@@ -1,147 +1,274 @@
 <div class="grid-container">
-	<div class="grid-x grid-padding-x">
-		<div class="cell">
-		<div id="search" class='CoveoSearchInterface' data-enable-history="false" data-design="new">
-			<span class="CoveoAnalytics"></span>
-			<div class="CoveoFoldingForThread" data-field="@foldfoldingfield" data-parent-field="@foldparentfield" data-child-field="@foldchildfield" data-rearrange="date ascending" data-enable-expand="true" data-range="2"></div>
-			<div class="coveo-main-section">
-		
-		
-			<div class="coveo-facet-column">
-			<div class="coveo__facetheader"><h2 class="subheader coveo--titleheader">Filter your Results </h2></div>
-				<div class="CoveoFacet" data-title="By Source" data-field="@source" id="source"></div>
-				<div class="CoveoFacet" data-title="By Category" data-field="@licategoryshorttitle" data-enable-collapse='true' id="category" data-tab="Lithium"></div>
-				<div class="CoveoFacet custom-liboard" data-title="By Board" data-field="@liboardshorttitle" data-tab="Lithium"></div>
-				<div class="CoveoFacet" data-title="Tags" data-field="@limessagetagsfacet" data-is-multi-value-field='true'></div>
-				<div class="CoveoFacet" data-title="Labels" data-field="@litopiclabelsfacet" data-is-multi-value-field='true'></div>
-				<div class="CoveoFacet custom-liauthor" data-title="By Author" data-field="@limessageauthor" data-tab="Lithium"></div>
-				<div class='CoveoFacetRange' data-title="By Date" data-field='@sysdate' id="byDate"></div>
-				<div class="CoveoFacet" data-title="By Metadata" data-field="@libymetadata" data-tab="Lithium"></div>
-				<div class="CoveoFacet" data-title="By Type of Post" data-field="@liboardinteractionstyle" data-tab="Lithium"></div>
-				<div class="CoveoFacet" data-title="File Type" data-field="@filetype"></div>
-				<div class="CoveoFacet" data-title="By Year" data-field="@year" data-tab="Lithium"></div>
-				<div class="CoveoFacet" data-title="By Month" data-field="@month" data-tab="Lithium"></div>
-			</div>
-		
-			<div class="coveo-results-column content-card">
-				<h1 class="section-header"><strong><span class="CoveoQueryPropertyOutput" data-property="totalCountFiltered"></span> Results</strong> For '<span class="CoveoQueryPropertyOutput" data-property="query"></span>' across Palo Alto Networks.</h1>
-				<div class="CoveoBreadcrumb"></div>
-				<div class="coveo-results-header coveo__results-header">
-				<div class="coveo-sort-section">
-					<span class="CoveoSort" data-sort-criteria="relevancy" data-caption="Relevance"></span>
-					<span class="CoveoSort" data-sort-criteria="date descending,date ascending" data-caption="Date"></span>
-				</div>
-				<div class="coveo-summary-section">
-					<div class="CoveoResultsPerPage"></div>
-					<span class="CoveoQuerySummary"></span>
-					<div class="CoveoPager"></div>
-				</div>
-				</div>
-				<div class="CoveoHiddenQuery"></div>
-				<div class="CoveoDidYouMean"></div>
-				<div class="CoveoErrorReport"></div>
-				<div class="CoveoResultList" data-layout="list" data-wait-animation="fade" data-auto-select-fields-to-include="true">
-					<script-template id="Lithium2" class="result-template" type="text/underscore">
-						<div class="coveo-result-frame coveo__result-frame templatelithium">
-							<div class="coveo-result-row">
-					
-								<div class="coveo-result-cell" style="padding-left:15px">
-									<div class="coveo-result-row">
-									<div class="coveo-result-cell" style="font-size:18px">
-										<a class="CoveoResultLink" data-always-open-in-new-window='true'></a>
-									</div>
-									<% if (raw.syssourcetype !== "Lithium") {{'{'}} %>
-										<div class="coveo-result-cell">
-										<span class="CoveoFieldValue" data-field="@date" data-helper="dateTime"></span>
-										</div>
-									<% {{'}'}} %>
-									</div>
-						
-									<div class="coveo-result-row  coveo__result-body">
-						
-										<div class="coveo-result-cell coveo__excerpt">
-											<div class="CoveoExcerpt">
-											</div>
-										</div>
-						
-						
-										<div class="coveo-result-row coveo__badgesection">
-											<div class="coveo-result-cell">
-												<div class="CoveoBadge" data-field="@licategoryshorttitle"></div>
-												<div class="CoveoBadge" data-field="@liboardshorttitle"></div>
-												<div class="CoveoBadge" data-field="@litopiclabelsfacet" data-split-values='true' data-display-separator=' '></div>
-											</div>
-										</div>
-						
-										<div className="coveo__resultstats-section">
-										<% if (raw.syssourcetype == "Lithium") {{'{'}} %>
-											<div class="coveo-result-cell lia-summary-view-statistics-wrapper">
-											<div class="coveo__resultstat">
-												<% if (raw.limessageissolution === 'True') {{'{'}} %>
-													<span class="article-tag__solved">Solved</span>
-												<% {{'}'}}  %>
-											</div>
-											<div class="coveo__resultstat">
-												<span class="lia-summary-view-statistic-post-date article-tag__date"><%- dateTime(raw.sysdate) %></span>
-											</div>
-											<div class="coveo__resultstat">
-												<% if (raw.limessagekudoscount != '0') {{'{'}} %>
-													<span class="CoveoFieldValue lia-summary-view-statistic-kudos article-tag__likes" data-field="@limessagekudoscount"></span><span class="article-tag__text"> Likes</span>
-												<% {{'}'}} %>
-											</div>
-											<div class="coveo__resultstat">
-												<span class="CoveoFieldValue lia-summary-view-statistic-views article-tag__views" data-field="@litopicviewcount"></span><span class="article-tag__text"> Views</span>
-											</div>
-											</div>
-										<% {{'}'}} %>
-										</div>
-									</div>
-						
-									<% if(_.size(childResults)>0) {{'{'}} %>
-									<span class="CoveoResultFolding" data-result-template-id="LithiumChildResult"></span>
-									<% {{'}'}} %>
-								</div>
-							</div>
-						</div>
-					</script-template>
-					<script-template id="LithiumChildResult" type="text/underscore">
-						<div class="coveo-result-frame coveo-email-result">
-							<div class="coveo-result-row">
-								<div class="coveo-result-cell">
-									<div class="coveo-result-row">
-										<div class="coveo-result-cell">
-											<% if (raw.limessageissolution == 'False') {{'{'}} %>
-											<div class="lithium-icons post"></div>
-											<% {{'}'}} else {{'{'}} %>
-											<div class="lithium-icons postacc"></div>
-											<% {{'}'}} %>
-											<a class="CoveoResultLink" data-always-open-in-new-window='true'></a>
-										</div>
-										<div class="coveo-result-cell">
-											<span class="CoveoFieldValue" data-field="@limessageposttime" data-helper="emailDateTime" data-helper-options="{predefinedFormat: 'yyyy/MM/dd'}"></span>
-										</div>
-									</div>
-									<div class="coveo-result-row">
-										<div class="coveo-result-cell">
-											<div class="CoveoExcerpt">
-											</div>
-										</div>
-									</div>
-									<div class="coveo-result-row">
-										<div class="coveo-result-cell">
-											<span class="CoveoResultAttachments" data-result-template-id="EmailResultAttachment"></span>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</script-template>
-				</div>
-				<div class="CoveoPager"></div>
-				<div class="CoveoLogo"></div>
-			</div>
-			</div>
-		</div>
-		</div>
-	</div>
+  <div class="grid-x grid-padding-x">
+    <div class="cell">
+      <div id="search" class='CoveoSearchInterface' data-enable-history="false" data-design="new"
+           data-pipeline='Tek-Talk Search'>
+        <div class="coveo-main-section">
+          <div class="coveo-facet-column">
+            <div class="coveo__facetheader"><h2 class="subheader coveo--titleheader">Filter your Results </h2></div>
+            <div class="CoveoFacet" data-title="By Source" data-field="@source" id="source"></div>
+            <div class="CoveoFacet" data-title="FileType" data-field="@filetype" data-allowed-values=“csdocument,csdiscussion,exchangemessage,html,pdf,doc” data-tab="All"></div>
+            <div class="CoveoFacet" data-title="Author" data-facet-search="true" data-field="@author" data-tab="All"></div>
+            <div class="CoveoFacet" data-title="Year" data-field="@year" data-tab="All"></div>
+            <div class='CoveoFacetSlider' data-title="Last Modified Date" data-date-field="true" data-field='@date'
+                 data-range-slider='true' data-graph-steps='10'></div>
+          </div>
+
+          <div class="coveo-results-column content-card">
+            <h1 class="section-header"><strong><span class="CoveoQueryPropertyOutput"
+                                                     data-property="totalCountFiltered"></span> Results</strong> For
+              '<span class="CoveoQueryPropertyOutput" data-property="query"></span>' across Palo Alto Networks.</h1>
+            <div class="CoveoBreadcrumb"></div>
+            <div class="coveo-results-header coveo__results-header">
+              <div class="coveo-sort-section">
+                <span class="CoveoSort" data-sort-criteria="relevancy" data-caption="Relevance"></span>
+                <span class="CoveoSort" data-sort-criteria="date descending,date ascending" data-caption="Date"></span>
+              </div>
+              <div class="coveo-summary-section">
+                <div class="CoveoResultsPerPage"></div>
+                <span class="CoveoQuerySummary"></span>
+              </div>
+            </div>
+            <div class="CoveoHiddenQuery"></div>
+            <div class="CoveoDidYouMean"></div>
+            <div class="CoveoErrorReport"></div>
+            <div class="CoveoResultList" data-layout="list" data-wait-animation="fade"
+                 data-auto-select-fields-to-include="true">
+
+              <div id="discussionFolding" class="CoveoFoldingForThread" data-field="@jivefoldingcollection"
+                   data-child-field="@jivefoldingchild" data-parent-field="@jivefoldingparent" data-range="1"
+                   data-maximum-expanded-results="5">
+              </div>
+
+              <script-template type="text/underscore" class="result-template" id="searchResults">
+                <% if (raw.source.toLowerCase() == "tek-talk archive shared") {{'{'}} %>
+                <div class="coveo-result-frame">
+                  <div class="coveo-result-row">
+                    <div class="coveo-result-cell" style="width: 85px; text-align: center; padding-top: 7px;">
+                      <span class="CoveoIcon"></span>
+                      <span class="CoveoQuickview">
+                                    <div class="coveo-icon-for-quickview"></div>
+                                    <div class="coveo-caption-for-quickview" tabindex="0">Quick View</div>
+                                </span>
+                    </div>
+                    <div class="coveo-result-cell">
+                      <div class="coveo-result-row">
+                        <div class="coveo-result-cell" style="font-size:18px; float: left;">
+                          <a class="CoveoResultLink" style="color:coral;" data-open-quickview='true'></a>
+                        </div>
+                        <div class="coveo-result-cell " style="width:120px; font-size:12px; float:right;">
+                          <span class="CoveoFieldValue" data-field="@date" data-helper="date"
+                                data-helper-options="{predefinedFormat: 'MM/dd/yyyy'}"></span>
+                        </div>
+                      </div>
+                      <!--<div class="coveo-result-row">-->
+                        <!--<div class="coveo-result-cell" style="font-size:13px;padding-top:5px;padding-bottom:5px;">-->
+                          <!--<span class="CoveoText" data-value="From:">From:</span>-->
+                          <!--<span class="CoveoFieldValue" data-field="@from" data-helper="email"-->
+                                <!--data-html-value="true"></span>-->
+                          <!--<span class="CoveoText" data-value="To:">To:</span>-->
+                          <!--<span class="CoveoFieldValue" data-field="@recipients" data-helper="email"-->
+                                <!--data-html-value="true"></span>-->
+                        <!--</div>-->
+                      <!--</div>-->
+                      <div class="coveo-result-row">
+                        <div class="coveo-result-cell" style="padding-top:5px; padding-bottom:10px">
+                          <span class="CoveoExcerpt"></span>
+                        </div>
+                      </div>
+                      <div class="coveo-result-row coveo__badgesection">
+                        <div class="coveo-result-cell">
+                          <div class="CoveoBadge" data-field="@concepts" data-split-values='true'
+                               data-display-separator=' '></div>
+                          <div class="CoveoBadge" data-field="@cstag" data-split-values='true'
+                               data-display-separator=' '></div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <% {{'}'}} else if (raw.source.toLowerCase() == "jive") {{'{'}} %>
+                <div class="coveo-result-frame">
+                  <div class="coveo-result-row">
+                    <div class="coveo-result-cell" style="width: 85px; text-align: center; padding-top: 7px;">
+                      <!--<span class="CoveoIcon"></span>-->
+                      <% if (raw.filetype.toLowerCase() == 'csmessage') {{'{'}} %>
+                      <span class="fa fa-envelope-open-o" style="font-size:60px"></span>
+                      <% {{'}'}}  %>
+                      <% if (raw.filetype.toLowerCase() == 'csdiscussion') {{'{'}} %>
+                      <span class="fa fa-comments-o" style="font-size:60px"></span>
+                      <% {{'}'}}  %>
+                      <% if (raw.filetype.toLowerCase() == 'csdocument') {{'{'}} %>
+                      <span class="fa fa-folder-o" style="font-size:60px"></span>
+                      <% {{'}'}}  %>
+                      <% if (raw.filetype.toLowerCase() == 'csevent') {{'{'}} %>
+                      <span class="fa fa-comments-o" style="font-size:60px"></span>
+                      <% {{'}'}}  %>
+                      <% if (raw.filetype.toLowerCase() == 'cscomment') {{'{'}} %>
+                      <span class="fa fa-comment" style="font-size:60px"></span>
+                      <% {{'}'}}  %>
+                      <% if (raw.filetype.toLowerCase() == 'cscommunity') {{'{'}} %>
+                      <span class="fa fa-globe" style="font-size:60px"></span>
+                      <% {{'}'}}  %>
+                      <% if (raw.filetype.toLowerCase() == 'csblogpost') {{'{'}} %>
+                      <span class="fa fa-file" style="font-size:60px"></span>
+                      <% {{'}'}}  %>
+                      <% if (raw.filetype.toLowerCase() == 'csvideo') {{'{'}} %>
+                      <span class="fa fa-file-video-o" style="font-size:60px"></span>
+                      <% {{'}'}}  %>
+                      <% if (raw.filetype.toLowerCase() == 'csproject') {{'{'}} %>
+                      <span class="fa fa-comments-o" style="font-size:60px"></span>
+                      <% {{'}'}}  %>
+                      <% if (raw.filetype.toLowerCase() == 'cstask') {{'{'}} %>
+                      <span class="fa fa-tasks" style="font-size:60px"></span>
+                      <% {{'}'}}  %>
+                      <% if (raw.filetype.toLowerCase() == 'cssocialgroup') {{'{'}} %>
+                      <span class="fa fa-users" style="font-size:60px"></span>
+
+
+                      <% {{'}'}}  %>
+
+                      <span class="CoveoQuickview">
+                                    <div class="coveo-icon-for-quickview"></div>
+                                    <div class="coveo-caption-for-quickview" tabindex="0">Quick View</div>
+                                </span>
+                    </div>
+                    <div class="coveo-result-cell">
+                      <div class="coveo-result-row">
+                        <div class="coveo-result-cell" style="font-size:18px; float: left;">
+                          <a class="CoveoResultLink" data-always-open-in-new-window='true' style="color:#34becd;"></a>
+                        </div>
+                        <div class="coveo-result-cell"
+                             style="width:120px; text-align:right; font-size:12px; float:right;">
+                          <span class="CoveoFieldValue" data-field="@date" data-helper="date"
+                                data-helper-options="{predefinedFormat: 'MM/dd/yyyy'}"></span>
+                        </div>
+                      </div>
+                      <!--<div class="coveo-result-row">-->
+                        <!--<div class="coveo-result-cell" style="font-size:13px;padding-top:5px;padding-bottom:5px;">-->
+                          <!--<span class="CoveoText" data-value="From:">From:</span>-->
+                          <!--<span class="CoveoFieldValue" data-field="@from" data-helper="email"-->
+                                <!--data-html-value="true"></span>-->
+                          <!--<span class="CoveoText" data-value="To:">To:</span>-->
+                          <!--<span class="CoveoFieldValue" data-field="@recipients" data-helper="email"-->
+                                <!--data-html-value="true"></span>-->
+                        <!--</div>-->
+                      <!--</div>-->
+                      <div class="coveo-result-row">
+                        <div class="coveo-result-cell" style="padding-top:5px; padding-bottom:10px">
+                          <span class="CoveoExcerpt"></span>
+                        </div>
+                      </div>
+                      <div class="coveo-result-row coveo__badgesection">
+                        <div class="coveo-result-cell">
+                          <div class="CoveoBadge" data-field="@concepts" data-split-values='true'
+                               data-display-separator=' '></div>
+                          <div class="CoveoBadge" data-field="@cstag" data-split-values='true'
+                               data-display-separator=' '></div>
+                          <% if (raw.jiveisanswer === 'True') {{'{'}} %>
+                          <span class="article-tag__solved">Answered</span>
+                          <% {{'}'}} %>
+                          <% if (raw.jiveishelpful === 'True') {{'{'}} %>
+                          <span class="article-tag__solved">Helpful</span>
+                          <% {{'}'}} %>
+                        </div>
+                      </div>
+
+                      <% if(raw.jivereplycount > 0) {{'{'}} %>
+                      <div class="coveo-result-row">
+                        <div class="coveo-result-cell" style="width:20px;"></div>
+                        <div class="coveo-result-cell">
+                                        <span class="CoveoResultFolding"
+                                              data-result-template-id="JiveChildResult"
+                                              data-expanded-caption="All Replies"
+                                              data-more-caption="Show more"
+                                              data-less-caption="Show less"
+                                              data-displayName="<%-raw.systitle %>"></span>
+                        </div>
+                      </div>
+                      <% {{'}'}} %>
+
+                    </div>
+                  </div>
+
+
+                </div>
+                <% {{'}'}} else {{'{'}} %>
+                <div class="coveo-result-frame">
+                  <div class="coveo-result-row">
+                    <div class="coveo-result-cell" style="width: 85px; text-align: center; padding-top: 7px;">
+                      <span class="CoveoIcon"></span>
+                      <span class="CoveoQuickview">
+                                    <div class="coveo-icon-for-quickview"></div>
+                                    <div class="coveo-caption-for-quickview" tabindex="0">Quick View</div>
+                                </span>
+                    </div>
+                    <div class="coveo-result-cell">
+                      <div class="coveo-result-row">
+                        <div class="coveo-result-cell" style="font-size:18px; float:left;">
+                          <a class="CoveoResultLink" data-always-open-in-new-window='true'></a>
+                        </div>
+                        <div class="coveo-result-cell" style="width:120px; float:right; font-size:12px">
+                          <span class="CoveoFieldValue" data-field="@date" data-helper="date"
+                                data-helper-options="{predefinedFormat: 'MM/dd/yyyy'}"></span>
+                        </div>
+                      </div>
+                      <!--<div class="coveo-result-row">-->
+                        <!--<div class="coveo-result-cell" style="font-size:13px;padding-top:5px;padding-bottom:5px;">-->
+                          <!--<span class="CoveoText" data-value="From:">From:</span>-->
+                          <!--<span class="CoveoFieldValue" data-field="@from" data-helper="email"-->
+                                <!--data-html-value="true"></span>-->
+                          <!--<span class="CoveoText" data-value="To:">To:</span>-->
+                          <!--<span class="CoveoFieldValue" data-field="@recipients" data-helper="email"-->
+                                <!--data-html-value="true"></span>-->
+                        <!--</div>-->
+                      <!--</div>-->
+                      <div class="coveo-result-row">
+                        <div class="coveo-result-cell" style="padding-top:5px; padding-bottom:10px">
+                          <span class="CoveoExcerpt"></span>
+                        </div>
+                      </div>
+                      <div class="coveo-result-row coveo__badgesection">
+                        <div class="coveo-result-cell">
+                          <div class="CoveoBadge" data-field="@concepts" data-split-values='true'
+                               data-display-separator=' '></div>
+                          <div class="CoveoBadge" data-field="@cstag" data-split-values='true'
+                               data-display-separator=' '></div>
+                          <div class="CoveoBadge" data-field="@jiveisanswer" data-split-values='true'
+                               data-display-separator=' '></div>
+                          <div class="CoveoBadge" data-field="@jiveishelpful" data-split-values='true'
+                               data-display-separator=' '></div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <% {{'}'}} %>
+
+
+              </script-template>
+
+              <script-template id="JiveChildResult" type="text/underscore">
+                <div class="coveo-result-frame" style="border: none;">
+                  <div class="coveo-result-row">
+                    <div class="coveo-result-cell coveo-comment-header">
+                      <span class="coveo-comment-from">
+                        <a class="CoveoResultLink coveo-forum-listing" data-always-open-in-new-window='true'>
+                          <span class="CoveoExcerpt"></span>
+                        </a>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </script-template>
+
+            </div>
+            <div class="CoveoPager"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

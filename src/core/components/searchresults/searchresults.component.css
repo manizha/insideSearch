@@ -1,0 +1,49 @@
+.CoveoSearchInterface{
+  display: block;
+}
+
+.CoveoSearchInterface .coveo-facet-column{
+  float: left;
+}
+
+.CoveoFacetSlider{
+   border: transparent;
+   background-color: transparent;
+ }
+.coveo-facet-header
+.filetype{
+  display: none;
+}
+
+.coveo-facet-header-settings{
+  left: 92%;
+  margin-left: 0;
+}
+
+.coveo-facet-header-title {
+  position: absolute;
+  left: 0;
+}
+
+.coveo-facet-value-count{
+  position: relative;
+  bottom: 25px;
+}
+
+.coveo-facet-value-exclude:hover{
+  display: none ;
+}
+
+.CoveoFacetSlider.coveo-disabled-empty {
+  display: block;
+}
+
+.CoveoBadge {
+  height: 40px;
+  overflow: hidden;
+  padding: 0;
+}
+
+.coveo-value {
+  padding: 6px 0;
+}

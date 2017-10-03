@@ -1,0 +1,28 @@
+.discussionImg img{
+  width: 900px;
+  margin-top: 10px;
+}
+
+.CoveoFieldTable {
+  border: none;
+  background-color: transparent;
+}
+
+table tbody,table tfoot,table thead {
+  border: none;
+  background-color: transparent;
+}
+
+table tbody tr:nth-child(even) {
+  border-bottom: 0;
+  background-color: transparent;
+}
+
+.popularList div .coveo-list-layout.CoveoResult{
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 5px;
+  /*margin-bottom: 10px;*/
+  /*height: 109px;*/
+  /*overflow: hidden;*/
+}

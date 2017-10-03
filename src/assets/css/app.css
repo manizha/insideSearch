@@ -2596,7 +2596,7 @@ small {
 
 .h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6 {
     font-family: Lato,Helvetica,Roboto,Arial,sans-serif;
-    font-style: regular;
+    font-style: normal;
     font-weight: 400;
     color: inherit;
     text-rendering: optimizeLegibility
@@ -6512,7 +6512,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 
 .tabs {
     margin: 1rem 0;
-    border: 1px solid none;
+    border: none;
     background: 0 0;
     list-style-type: none
 }
@@ -6581,15 +6581,14 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 }
 
 .tabs-content {
-    border: 1px solid none;
+    border: none;
     border-top: 0;
     background: 0 0;
-    color: none;
     transition: all .5s ease
 }
 
 .tabs-content.vertical {
-    border: 1px solid none;
+    border: none;
     border-left: 0
 }
 
@@ -6645,9 +6644,9 @@ a.thumbnail image {
 }
 
 .title-bar-left,.title-bar-right {
-    -webkit-flex: 1 1 0px;
-    -ms-flex: 1 1 0px;
-    flex: 1 1 0px
+    -webkit-flex: 1 1 0;
+    -ms-flex: 1 1 0;
+    flex: 1 1 0;
 }
 
 .title-bar-right {
@@ -7037,7 +7036,6 @@ a.thumbnail image {
 
 .align-spaced {
     -webkit-justify-content: space-around;
-    -ms-flex-pack: distribute;
     justify-content: space-around
 }
 
@@ -7061,7 +7059,7 @@ a.thumbnail image {
 
 .align-self-top {
     -webkit-align-self: flex-start;
-    -ms-flex-item-align: start;
+    -ms-flex-align: start;
     align-self: flex-start
 }
 
@@ -8817,19 +8815,19 @@ ol.list-upper-roman {
 }
 
 .lia-summary-view-statistic-post-date {
-    background-image: url(/assets/img/lithium/icon_stat_time.svg)
+    background-image: url(../img/lithium/icon_stat_time.svg)
 }
 
 .lia-summary-view-statistic-kudos {
-    background-image: url(/assets/img/lithium/icon_stat_kudos.svg)
+    background-image: url(../img/lithium/icon_stat_kudos.svg)
 }
 
 .lia-summary-view-statistic-views {
-    background-image: url(/assets/img/lithium/icon_stat_views.svg)
+    background-image: url(../img/lithium/icon_stat_views.svg)
 }
 
 .lia-summary-view-statistic-solved {
-    background-image: url(/assets/img/lithium/message_type_solved.svg)
+    background-image: url(../img/lithium/message_type_solved.svg)
 }
 
 .lia-summary-view-statistic-kudos,.lia-summary-view-statistic-post-date,.lia-summary-view-statistic-solved,.lia-summary-view-statistic-views {
@@ -9658,6 +9656,21 @@ html {
     .coveo-results-column {
         margin-top:1rem
     }
+  .CoveoFacet,.CoveoFacetRange {
+    background:0 0;
+    border: 0
+  }
+  .coveo-facet-footer, .coveo-facet-header {
+    background: 0 0;
+  }
+  .coveo-facet-less,.coveo-facet-more {
+    background: 0 0;
+    color: #48525a
+  }
+  .CoveoSearchInterface .coveo-search-section {
+    padding: 4px 11px;
+  }
+
 }
 
 @media screen and (min-width: 64em) {
@@ -9665,12 +9678,30 @@ html {
         background:0 0;
         border: 0
     }
+  .CoveoSearchInterface .coveo-search-section {
+    padding: 3px 11px;
+  }
 }
 
 @media screen and (max-width: 63.9375em) {
     .CoveoSearchInterface .coveo-facet-column .coveo__facetheader {
         display:none
     }
+  .CoveoFacet,.CoveoFacetRange {
+    background:0 0;
+    border: 0
+  }
+  .coveo-facet-footer, .coveo-facet-header {
+    background: 0 0;
+  }
+  .coveo-facet-less,.coveo-facet-more {
+    background: 0 0;
+    color: #48525a
+  }
+  .CoveoSearchInterface .coveo-search-section {
+    padding: 4px 11px;
+  }
+
 }
 
 .coveo-facet-header-title {
@@ -9841,7 +9872,7 @@ li.coveo-pager-next.coveo-pager-anchor.coveo-pager-list-item,li.coveo-pager-prev
 }
 
 .CoveoBadge.coveobadge--nonselectable:hover {
-    background-color: none
+    background-color: transparent;
 }
 
 .coveo-facet-breadcrumb-caption::after {
@@ -10023,17 +10054,17 @@ a.coveo-folding-show-more a.coveo-folding-show-less {
 }
 
 [type=color],[type=date],[type=datetime-local],[type=datetime],[type=email],[type=month],[type=number],[type=password],[type=search],[type=tel],[type=text],[type=time],[type=url],[type=week],textarea {
-    background-color: none;
-    color: #48525a
+    background-color: transparent;
+    color: #48525a;
 }
 
 [type=color]:focus,[type=date]:focus,[type=datetime-local]:focus,[type=datetime]:focus,[type=email]:focus,[type=month]:focus,[type=number]:focus,[type=password]:focus,[type=search]:focus,[type=tel]:focus,[type=text]:focus,[type=time]:focus,[type=url]:focus,[type=week]:focus,textarea:focus {
     border: 1px solid #f2f5f7;
-    box-shadow: none
+    box-shadow: none;
 }
 
 .required-field {
-    border: 1px solid #f9a145
+    border: 1px solid #f9a145;
 }
 
 .upload-field {
@@ -10398,7 +10429,6 @@ a.coveo-folding-show-more a.coveo-folding-show-less {
 
 .live-search__selector-dropdown {
     background-color: #006d91;
-    white-space: none
 }
 
 .live-search__selector-dropdown.button.dropdown::after,.live-search__selector-dropdown.dropdown.button--category::after {
@@ -11820,6 +11850,37 @@ a.coveo-folding-show-more a.coveo-folding-show-less {
     top: -2px
 }
 
+.masonry-css {
+    -webkit-column-count: 1;
+    column-count: 1;
+    -webkit-column-gap: 1rem;
+    column-gap: 1rem
+}
+
+@media print,screen and (min-width: 40em) {
+    .masonry-css {
+        -webkit-column-count:2;
+        column-count: 2
+    }
+}
+
+.masonry-css-item {
+    -webkit-column-break-inside: avoid;
+    break-inside: avoid;
+    padding: 1rem 1rem;
+    border-right: 1px solid #cedee2
+}
+
+@media screen and (max-width: 39.9375em) {
+    .masonry-css-item {
+        border-right:0
+    }
+}
+
+.masonry-css-item:last-child {
+    border-right: 0
+}
+
 .case-details .case-number {
     margin-bottom: .5rem
 }
@@ -12491,4 +12552,183 @@ a.coveo-folding-show-more a.coveo-folding-show-less {
 
 .cell .grid-y.grid-frame {
     height: 100%
+}
+
+/* Begin PANW Custom Styles */
+
+#content-body-container, .sfdc-page-content {
+    display: none;
+}
+
+.CoveoLogo {
+    display: none !important;
+}
+
+input[type="text"].edit-profiletext{
+    display: block;
+    box-sizing: border-box;
+    width: 100% !important;
+    height: 2.4375rem !important;
+    margin: 0 0 1rem;
+    padding: .5rem;
+    border: 1px solid #e5e8ea;
+    border-radius: 3px;
+    background-color: #fefefe;
+    box-shadow: inset 0 1px 2px rgba(10,10,10,.1);
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #0a0a0a;
+    transition: box-shadow .5s,border-color .25s ease-in-out;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.content-card-announcement {
+    background-color: #fefefe;
+    border-radius: .3rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,.2);
+    padding: 2rem
+}
+
+@media screen and (max-width: 73.9375em) {
+    .topbar__right>#coveosearchid{
+        width:100%
+    }
+}
+
+/* To fix the overlay issue with Salesforce Communities */
+.sticky {
+    z-index: 10 !important;
+}
+
+/* Profile pic margin */
+.profile-pic {
+    margin-right: 0.1rem !important;
+    margin-left: 1rem;
+}
+
+.CoveoSort,.case-mgmt-dashboard .coveo-list-layout.CoveoResult .coveo-result-frame .h3,.case-mgmt-dashboard .coveo-list-layout.CoveoResult .coveo-result-frame h3,.coveo-results-per-page-list,.h2,.label--case-status,.off-canvas .accordion .accordion-title,.progress-indicator .progress-indicator--step,.subheader,a.coveo-folding-show-more a.coveo-folding-show-less,h2 {
+    margin-bottom: 0.1rem !important;
+}
+
+/* OffCanvas styles for R1 - R1 is only for release 1 of the CSP, when the off canvas is reverted back to the original design these will be obsolete */
+.pan-off-canvas .off-canvas__links-r1 {
+    margin: 0.5rem;
+    max-width: 300px;
+}
+
+.pan-off-canvas .off-canvas__links-r1 .r1-link {
+    margin-bottom: 1rem;
+}
+/* End PANW Custom Styles */
+
+/* Begin PANW Footer Styles */
+
+.footer-pan {
+    padding: 2rem 1rem 2rem 1rem;
+    background: #48525a;
+}
+
+.footer-pan h5 {
+    color: #ffffff;
+    font-size: 1.25rem;
+}
+
+.footer-pan p {
+    color: #ffffff;
+    font-size: inherit;
+}
+
+.table-header {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.priority-table__critical {
+    box-shadow: inset 5px 0 0 #F95147;
+}
+
+.priority-table__high {
+    box-shadow: inset 5px 0 0 #FFBC1A;
+}
+
+.priority-table__medium {
+    box-shadow: inset 5px 0 0 #7FD0DD;
+}
+
+.priority-table__low {
+    box-shadow: inset 5px 0 0 #B5D553;
+}
+
+/* End PANW Footer Styles */
+
+/*Manizhah changes*/
+
+.CoveoSearchInterface{
+  display: block;
+}
+
+.CoveoSearchInterface .coveo-facet-column{
+  float: left;
+}
+
+.CoveoFacetSlider{
+  border: transparent;
+  background-color: transparent;
+}
+.coveo-facet-header
+.filetype{
+  display: none;
+}
+
+.coveo-facet-header-settings{
+  left: 92%;
+  margin-left: 0;
+}
+
+.coveo-facet-header-title {
+  position: absolute;
+  left: 0;
+}
+
+.coveo-facet-value-count{
+  position: relative;
+  bottom: 25px;
+}
+
+.coveo-facet-value-exclude:hover{
+  display: none ;
+}
+
+.CoveoFacetSlider.coveo-disabled-empty {
+  display: block;
+}
+
+.CoveoBadge {
+  height: 40px;
+  overflow: hidden;
+  padding: 0;
+}
+
+.coveo-value {
+  padding: 6px 0;
+}
+
+.js-off-canvas-overlay {
+  background: #E6E7E8;
+}
+
+li.coveo-pager-list-item {
+  display: inline-block;
+}
+
+body {
+  background: #E6E7E8;
+}
+
+#MyRelatedResults div a{
+  color: #E6E7E8;
 }

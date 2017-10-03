@@ -16509,7 +16509,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	        // By using a setTimeout, we allow other possible code related to the search box / magic box time to complete.
 	        // eg: onblur of the magic box.
 	        setTimeout(function () {
-	            _this._window.location.href = link.protocol + "//" + link.host + link.pathname + link.search + (link.hash ? link.hash + '&' : '#') + HashUtils_1.HashUtils.encodeValues(stateValues);
+				var pathName = link.pathname;
+
+				if (pathName.indexOf('/') !== 0) {
+					pathName = '/' + pathName;
+				}
+
+				_this._window.top.location.href = link.protocol + "//" + link.host + pathName + link.search + (link.hash ? link.hash + '&' : '#') + HashUtils_1.HashUtils.encodeValues(stateValues);					
+	            //_this._window.location.href = link.protocol + "//" + link.host + link.pathname + link.search + (link.hash ? link.hash + '&' : '#') + HashUtils_1.HashUtils.encodeValues(stateValues);
 	        }, 0);
 	    };
 	    StandaloneSearchInterface.prototype.searchboxIsEmpty = function () {
@@ -20992,7 +20999,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 	    SentryLogger.prototype.handleError = function (message, filename, lineno, colno, error) {
 	        // try not to log irrelevant errors ...
-	        if (!filename.toLowerCase().match(/coveo/) || this.windoh.location.host.toLowerCase().match(/localhost/)) {
+	        if (!filename || !filename.toLowerCase().match(/coveo/) || this.windoh.location.host.toLowerCase().match(/localhost/)) {
 	            return;
 	        }
 	        var errorInfo = {
@@ -22128,12 +22135,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	                _this.searchEvents.push(searchEvent);
 	                _this.results.push(queryResults);
 	                return queryResults;
-	            }
-	        }).finally(function () {
-	            var index = _.indexOf(_this.searchPromises, args.promise);
-	            _this.searchPromises.splice(index, 1);
-	            if (_this.searchPromises.length == 0) {
-	                _this.flush();
 	            }
 	        });
 	    };

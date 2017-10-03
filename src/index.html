@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Support Portal</title>
+  <title>Discussion</title>
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,26 +10,29 @@
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css-vendor/coveofullsearchnewdesign.css"/>
   <link rel="stylesheet" href="/assets/css/app.css"/>
-  <!--COVEO RESULTS ICONS: font-awesome -->
-  <link rel="stylesheet" href="/assets/css-vendor/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="/assets/css-vendor/slick.css"/>
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
+
 </head>
 <body>
+<div  id="search " class='CoveoSearchInterface' data-enable-history="false" data-design="new" data-pipeline='Tek-Talk Search'>
   <div class="off-canvas-wrapper">
     <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
       <!--TODO: off-canvas-->
     </div>
 
     <div class="off-canvas-content" data-off-canvas-content>
-      
+
       <div data-sticky-container>
         <div class="sticky" data-sticky data-margin-top="0">
-          <site-header></site-header>
+          <site-index></site-index>
         </div>
       </div>
 
       <div class="page-wrapper">
         <div class="stage">
+
+          <site-homepage></site-homepage>
 
         </div>
       </div>
@@ -37,6 +40,7 @@
       <site-footer></site-footer>
     </div>
   </div>
+</div>
 
   <script src="/assets/js-vendor/jquery.min.js"></script>
   <script src="/assets/js-vendor/foundation.min.js"></script>

@@ -13,17 +13,13 @@
 
 .menu a{
   color: #000000;
+  font-size: 1rem;
   font-weight: 500;
   margin-left: 10px;
-  font-family: 'Lato-bold';
-  text-transform: uppercase;
-  font-size: 13px;
-  font-style: normal;
 }
 
 .submenu li a{
   color: #009ACE;
-  text-transform: none;
 }
 
 .submenu li:hover{
@@ -124,13 +120,12 @@
 
 .responsive-nav-social a {
   color: #000000;
-  font-size: 1rem;
+  font-size: 0.9rem;
   padding: 1rem;
 }
 
 .askQ a {
   padding: 1rem !important;
-  color: #ffffff;
 }
 
 .responsive-nav-social a:hover {
@@ -138,10 +133,9 @@
   transition: color 0.2s ease-in;
 }
 
-.responsive-nav-social .askQ a:hover {
+.responsive-nav-social .askQ:hover {
   color: #ffffff;
   transition: color 0.2s ease-in;
-  text-decoration: none;
 }
 
 @media screen and (max-width: 39.9375em) {
@@ -229,21 +223,3 @@
 .dropdown.menu .logo{
   padding: 0;
 }
-
-
-.responsive-nav-social {
-  border-bottom: none;
-}
-
-.accordion-menu {
-  border-top: none;
-  border-bottom: none;
-}
-
-.menu-icon:hover::after {
-  background: #000000;
-  box-shadow: 0 7px 0 #000000, 0 14px 0 #000000;
-}
-
-/*test overlay*/
-

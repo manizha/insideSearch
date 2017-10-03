@@ -11,7 +11,8 @@
       "assets": [
         "assets",
         "favicon.ico",
-        "search.html"
+        "tek-talkSearch.html",
+        "jiveSearch.html"
       ],
       "index": "index.html",
       "main": "core.ts",
@@ -23,7 +24,7 @@
       "styles": [
         "styles.css"
       ],
-      "scripts": [  
+      "scripts": [
         "./assets/js/coveo-context.js",
         "./assets/js/coveo-config.js",
         "./assets/js/coveo-angular.js",

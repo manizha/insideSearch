@@ -1,0 +1,20 @@
+.boxSearch{
+  position: absolute;
+  right: 25%;
+  top: -86px;
+  z-index: 10;
+}
+
+.coveo-value {
+  padding: 10px 0;
+}
+
+.CoveoSearchbox .magic-box .magic-box-input>input {
+  height: 50px;
+  margin-left: -.7rem;
+}
+
+.CoveoSearchbox .magic-box .magic-box-input {
+  height: 48px;
+  padding: 7px 50px 7px 20px;
+}
