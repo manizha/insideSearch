@@ -9,8 +9,8 @@
 /*}*/
 
 /*#jiveSearch{*/
-   /*display: none;*/
- /*}*/
+  /*display: none;*/
+/*}*/
 /*#tekTalkSearch{*/
   /*display: none;*/
 /*}*/
@@ -339,8 +339,8 @@
   background-color: #f6f6f6;
 }
 
- coveo-dropdown-header-wrapper{
-   display: block !important;
- }
+coveo-dropdown-header-wrapper{
+  display: block !important;
+}
 
 

@@ -6,9 +6,12 @@
   <div class="large-centered small-centered columns">
     <coveo-search></coveo-search>
   </div>
-  <!--<div id='MyRelatedResults'></div>-->
-      <div class="coveo-recommendation-column" style="width: 50%; margin: 0 25%;">
-        <div id="PopularArticlesWidgetUI"  class="CoveoSearchInterface" data-design="new" data-results-per-page="5" data-enable-history="true" style="min-width: 176px;">
+
+  <div id="MyRelatedResults"></div>
+
+
+  <div class="coveo-recommendation-column" style="width: 50%; margin: 0 25%;">
+        <div id="PopularArticlesWidgetUI" data-design="new" data-results-per-page="5" data-enable-history="true" style="min-width: 176px;">
         <div data-search-hub="PopularArticlesWidget">
         </div>
         <div class="coveo-recommendation-header" style="padding: 10px 20px;">
@@ -17,36 +20,6 @@
         </div>
       <div class="coveo-results-column" style="font-size:18px; float:left;">
         <div class="CoveoResultList popularList" data-wait-animation="fade" data-auto-select-fields-to-include="true">
-          <script id="DefaultRecommendation" class="result-template" type="text/underscore">
-            <div class="coveo-result-frame">
-              <div class="coveo-result-row">
-                <div class="coveo-result-cell" style="width: 85px; text-align: center; padding-top: 7px;">
-                  <span class="CoveoIcon"></span>
-                  <span class="CoveoQuickview">
-                    <div class="coveo-icon-for-quickview"></div>
-                    <div class="coveo-caption-for-quickview" tabindex="0">Quick View</div>
-                  </span>
-                </div>
-                <div class="coveo-result-cell">
-                  <div class="coveo-result-row">
-                    <div class="coveo-result-cell" style="font-size:18px; float:left;">
-                      <a class="CoveoResultLink" data-always-open-in-new-window='true'></a>
-                    </div>
-                    <div class="coveo-result-cell" style="width:120px; float:right; font-size:12px">
-                          <span class="CoveoFieldValue" data-field="@date" data-helper="date" data-helper-options="{predefinedFormat: 'MM/dd/yyyy'}"></span>
-                    </div>
-                  </div>
-
-                  <div class="coveo-result-row">
-                    <div class="coveo-result-cell" style="padding-top:5px; padding-bottom:10px">
-                      <span class="CoveoExcerpt"></span>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </script>
 
         </div>
       </div>

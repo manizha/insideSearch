@@ -16509,6 +16509,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	        // By using a setTimeout, we allow other possible code related to the search box / magic box time to complete.
 	        // eg: onblur of the magic box.
 	        setTimeout(function () {
+				// Comments By LK On 10/12/17
+				// Fix for IE - Add leading slash to pathname if there's none 
+				// _this._window.location.href = link.protocol + "//" + link.host + link.pathname + link.search + (link.hash ? link.hash + '&' : '#') + HashUtils_1.HashUtils.encodeValues(stateValues);
+
 				var pathName = link.pathname;
 
 				if (pathName.indexOf('/') !== 0) {
@@ -16516,7 +16520,6 @@ return /******/ (function(modules) { // webpackBootstrap
 				}
 
 				_this._window.top.location.href = link.protocol + "//" + link.host + pathName + link.search + (link.hash ? link.hash + '&' : '#') + HashUtils_1.HashUtils.encodeValues(stateValues);					
-	            //_this._window.location.href = link.protocol + "//" + link.host + link.pathname + link.search + (link.hash ? link.hash + '&' : '#') + HashUtils_1.HashUtils.encodeValues(stateValues);
 	        }, 0);
 	    };
 	    StandaloneSearchInterface.prototype.searchboxIsEmpty = function () {
@@ -20999,6 +21002,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 	    SentryLogger.prototype.handleError = function (message, filename, lineno, colno, error) {
 	        // try not to log irrelevant errors ...
+			// Comments By LK On 10/12/2017
+			// Handle null or undefined
 	        if (!filename || !filename.toLowerCase().match(/coveo/) || this.windoh.location.host.toLowerCase().match(/localhost/)) {
 	            return;
 	        }
@@ -22126,17 +22131,24 @@ return /******/ (function(modules) { // webpackBootstrap
 	        // TODO: Maybe a better way to grab the query controller?
 	        var queryController = Component_1.Component.get(eventTarget, QueryController_1.QueryController);
 	        Assert_1.Assert.exists(queryController);
-	        args.promise.then(function (queryResults) {
-	            Assert_1.Assert.exists(queryResults);
-	            Assert_1.Assert.check(!_this.finished);
-	            if (queryResults._reusedSearchUid !== true || _this.templateSearchEvent.actionCause == AnalyticsActionListMeta_1.analyticsActionCauseList.recommendation.name) {
-	                var searchEvent = _.extend({}, _this.templateSearchEvent);
-	                _this.fillSearchEvent(searchEvent, searchInterface, args.query, queryResults);
-	                _this.searchEvents.push(searchEvent);
-	                _this.results.push(queryResults);
-	                return queryResults;
-	            }
-	        });
+			
+			args.promise.then(function (queryResults) {
+				Assert_1.Assert.exists(queryResults);
+				Assert_1.Assert.check(!_this.finished);
+				if (queryResults._reusedSearchUid !== true || _this.templateSearchEvent.actionCause == AnalyticsActionListMeta_1.analyticsActionCauseList.recommendation.name) {
+					var searchEvent = _.extend({}, _this.templateSearchEvent);
+					_this.fillSearchEvent(searchEvent, searchInterface, args.query, queryResults);
+					_this.searchEvents.push(searchEvent);
+					_this.results.push(queryResults);
+					return queryResults;
+				}
+			}).finally(function () {
+				var index = _.indexOf(_this.searchPromises, args.promise);
+				_this.searchPromises.splice(index, 1);
+				if (_this.searchPromises.length == 0) {
+					_this.flush();
+				}
+			});
 	    };
 	    PendingSearchEvent.prototype.stopRecording = function () {
 	        if (this.handler) {

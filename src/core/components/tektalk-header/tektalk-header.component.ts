@@ -3,13 +3,13 @@ import { environment } from '../../../environments/environment';
 declare var $: any;
 
 @Component({
-  selector: 'site-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css'],
+  selector: 'site-tektalk-header',
+  templateUrl: './tektalk-header.component.html',
+  styleUrls: ['./tektalk-header.component.css'],
   encapsulation: ViewEncapsulation.None
 })
 
-export class HeaderComponent implements OnInit {
+export class TektalkHeaderComponent implements OnInit {
   logo = 'assets/images/logo.png';
   baseUrl = environment.baseUrl;
 

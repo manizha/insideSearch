@@ -7,5 +7,6 @@ export const environment = {
   production: false,
   baseUrl: '',
   panwHomeUrl: 'https://www.paloaltonetworks.com/',
-  liveCommunityUrl: 'https://live.paloaltonetworks.com/'
+  liveCommunityUrl: 'https://live.paloaltonetworks.com/',
+  CoveoSandBox: 'paloaltonetworksintranetsandbox1'
 };

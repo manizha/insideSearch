@@ -3,13 +3,13 @@ import { environment } from '../../../environments/environment';
 declare var $: any;
 
 @Component({
-  selector: 'site-footer',
-  templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.css'],
+  selector: 'site-navleft',
+  templateUrl: './navleft.component.html',
+  styleUrls: ['./navleft.component.css'],
   encapsulation: ViewEncapsulation.None
 })
 
-export class FooterComponent implements OnInit {
+export class NavleftComponent implements OnInit {
   logo = 'assets/images/logo.png';
   baseUrl = environment.baseUrl;
 

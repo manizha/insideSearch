@@ -1,60 +1,52 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:ng="http://angularjs.org">
 <head>
   <meta charset="utf-8">
   <title>Discussion</title>
   <base href="/">
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css-vendor/coveofullsearchnewdesign.css"/>
   <link rel="stylesheet" href="/assets/css/app.css"/>
   <link rel="stylesheet" type="text/css" href="/assets/css-vendor/slick.css"/>
-  <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
-
 </head>
 <body>
-<div  id="search " class='CoveoSearchInterface' data-enable-history="false" data-design="new" data-pipeline='Tek-Talk Search'>
+<div >
   <div class="off-canvas-wrapper">
     <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
       <!--TODO: off-canvas-->
     </div>
-
     <div class="off-canvas-content" data-off-canvas-content>
-
       <div data-sticky-container>
         <div class="sticky" data-sticky data-margin-top="0">
           <site-index></site-index>
         </div>
       </div>
-
       <div class="page-wrapper">
         <div class="stage">
-
           <site-homepage>
             <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.75; z-index: 88888; background-color: white;">
-              &nbsp;
-
-              <div style="position: fixed; left: 50%; top: 50%; bottom: 10; right: 10; z-index: 99999; background-color: white; transform: translate(-50%, -50%);" >
+              <div style="position: fixed; left: 50%; top: 50%; bottom: 10px; right: 10px; z-index: 99999; background-color: white; transform: translate(-50%, -50%);">
                 <img src="/assets/img/pan-loading.gif" alt="Loading"/>
               </div>
             </div>
           </site-homepage>
-
         </div>
       </div>
 
-      <site-footer></site-footer>
     </div>
   </div>
 </div>
-
-  <script src="/assets/js-vendor/jquery.min.js"></script>
-  <script src="/assets/js-vendor/foundation.min.js"></script>
-  <script src="/assets/js-vendor/CoveoJsSearch.js"></script>
-  <script src="/assets/js-vendor/slick.js"></script>
-  <script src="/assets/js-vendor/templatesNew.js"></script>
-  <script src="/assets/js/app-coveo.js"></script>
+<script src="/assets/js-vendor/jquery.min.js"></script>
+<script src="/assets/js-vendor/foundation.min.js"></script>
+<script src="/assets/js-vendor/CoveoJsSearch.js"></script>
+<script src="/assets/js-vendor/slick.js"></script>
+<script src="/assets/js-vendor/templatesNew.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $(document).foundation();
+  });
+</script>
 </body>
 </html>

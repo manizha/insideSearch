@@ -1,88 +1,31 @@
-
-
-<nav class="hover-underline-menu" data-menu-underline-from-center role="navigation">
-
+<nav class="hover-underline-menu topNav" data-menu-underline-from-center role="navigation">
 <div class="responsive-nav-social-mobile" data-responsive-toggle="responsive-nav-social" data-hide-for="large">
-  <div class="responsive-nav-social-mobile-left">
+  <div class="responsive-nav-social-mobile-left float-left align-top">
     <button class="menu-icon" type="button" data-toggle="responsive-nav-social"></button>
+  </div>
+  <div class="responsive-nav-social-mobile-right">
+    <div class="headerSearch">
+      <coveo-search></coveo-search>
+    </div>
+    <span id="askQ" class="  show-this">
+      <a href="https://paloaltonetworks.hosted.jivesoftware.com/discussion/create.jspa?containerType=14&containerID=2250"
+         type="button" class="button askBtn align-middle">Ask Tek-Talk</a>
+    </span>
   </div>
 </div>
 
 <div data-sticky-container>
   <div class="responsive-nav-social" id="responsive-nav-social" data-sticky data-options="marginTop:0;">
     <div  class="grid-container full">
-    <div class="row align-justify align-middle" id="responsive-menu">
-      <div class="responsive-nav-social-left">
-        <ul class="menu vertical medium-horizontal dropdown" data-responsive-menu="accordion large-dropdown">
-          <li>
-            <a class="logo" href="https://intranet.paloaltonetworks.com/welcome">
-              <img src="{{baseUrl}}/assets/img/pan-logo.png" alt="PAN Logo" class="pan-logo"/>
-            </a>
+    <div class="row offset-1" id="responsive-menu">
+      <site-navleft></site-navleft>
+      <div class="responsive-nav-social-right hide-for-medium-only hide-for-small-only">
+        <ul class="menu">
+          <li class="jiveSearch" id="jiveSearch">
+            <jive-search></jive-search>
           </li>
-          <li>
-          <a href="javascript:void(0)">GET STARTED</a>
-          <ul class="menu horizontal">
-          <li><a href="https://intranet.paloaltonetworks.com/docs/DOC-24402">A-Z for Getting Things Done</a></li>
-          <li><a href="https://intranet.paloaltonetworks.com/community/human_resources/new-hire-resources">New Employee Resources</a></li>
-          <li><a href="https://intranet.paloaltonetworks.com/groups/security-awareness-prg">Security Awareness</a></li>
-          <li><a href="https://intranet.paloaltonetworks.com/community/operations/travel">Travel Desk</a></li>
-          </ul>
-          </li>
-          <li><a href="javascript:void(0)">POPULAR</a>
-          <ul class="menu horizontal">
-          <li><a href="https://intranet.paloaltonetworks.com/community/product-knowledge-base">Tek-Talk Discussion Forum</a></li>
-          <li><a href="https://intranet.paloaltonetworks.com/docs/DOC-11657">Official Corporate Presentation</a></li>
-          <li><a href="https://intranet.paloaltonetworks.com/community/marketing/competitive-intelligence">Competitive Intelligence Forum</a></li>
-          <li><a href="https://intranet.paloaltonetworks.com/community/employee-community/womens-network">Women's Network Community</a></li>
-          <li><a href="http://smile.paloaltonetworks.com/">SMILE: Volunteer Community</a></li>
-          <li><a href="https://intranet.paloaltonetworks.com/community/marketing/global-events">Global Events</a></li>
-          <li><a href="https://intranet.paloaltonetworks.com/community/marketing/brand-assets">Brand Assets</a></li>
-          </ul>
-          </li>
-          <li>
-          <a href="javascript:void(0)">DEPARTMENTS</a>
-          <ul class="menu horizontal">
-          <li><a href="https://intranet.paloaltonetworks.com/community/accounting">Accounting</a></li>
-          <li><a href="https://intranet.paloaltonetworks.com/community/development/software/product_engineering">Product Engineering</a></li>
-          <li><a href="https://intranet.paloaltonetworks.com/community/support">Global Customer Support and Services</a></li>
-          <li><a href="https://intranet.paloaltonetworks.com/community/human_resources">Human Resources</a></li>
-          <li><a href="https://intranet.paloaltonetworks.com/community/wpr">Workplace Resources</a></li>
-          <li><a href="https://intranet.paloaltonetworks.com/community/it">Information Technology</a></li>
-          <li><a href="https://intranet.paloaltonetworks.com/community/marketing">Marketing</a></li>
-          <li><a href="https://intranet.paloaltonetworks.com/community/legal">Global Legal</a></li>
-          <li><a href="https://intranet.paloaltonetworks.com/community/operations">Operations</a></li>
-          <li><a href="https://intranet.paloaltonetworks.com/community/sales">Sales</a></li>
-          </ul>
-          </li>
-          <li><a href="javascript:void(0)">LINKS</a>
-          <ul class="menu horizontal">
-          <li><a href="https://wd5.myworkday.com/paloaltonetworks/d/home.htmld#%3Bpaloaltonetworks%3Bhome.htmld">Workday</a></li>
-          <li><a href="https://workforcenow.adp.com/public/index.htm">ADP (Workforce Now)</a></li>
-          <li><a href="https://www.concursolutions.com/">Concur Travel</a></li>
-          <li><a href="https://live.paloaltonetworks.com/">Live Community</a></li>
-          <li><a href="https://panservicedesk.service-now.com/ess_portal/payroll_home.do">Payroll Self-Service Portal</a></li>
-          <li><a href="http://recruiting.paloaltonetworks.com/">Recruiting</a></li>
-          <li><a href="https://paloaltonetworks.csod.com/">The Learning Center</a></li>
-          <li><a href="https://www.paloaltonetworks.com/field">Field Portal</a></li>
-          <li><a href="https://jobs.jobvite.com/paloaltonetworks-internal">Internal Job Board</a></li>
-          </ul>
-          </li>
-          <li><a href="javascript:void(0)">GET HELP</a>
-          <ul class="menu horizontal">
-          <li><a href="http://www.paloaltonetworks.com/asklegal">Ask Legal</a></li>
-          <li><a href="http://support.paloaltonetworks.com/">Customer Support</a></li>
-          <li><a href="https://intranet.paloaltonetworks.com/groups/deal-management">Deal Support</a></li>
-          <li><a href="https://intranet.paloaltonetworks.com/human_resources/ask-hr/hr-connect">HR Connect</a></li>
-          <li><a href="https://panservicedesk.service-now.com/ess_portal/it_home.do">IT Help Desk</a></li>
-          <li><a href="https://panservicedesk.service-now.com/services?id=workplace_services">Workplace Resources</a></li>
-          </ul>
-          </li>
-          <li class="headerSearch">
-          <coveo-search></coveo-search>
-          </li>
-          <li id="show-this" class="askQ align-middle">
-          <a href="https://paloaltonetworks.hosted.jivesoftware.com/discussion/create.jspa?containerType=14&containerID=2250"
-          type="button" class="button">Ask Tek-Talk</a>
+          <li class="show-this">
+            <a href="https://paloaltonetworks.hosted.jivesoftware.com/discussion/create.jspa?containerType=14&containerID=2250" type="button" class="button askBtn align-middle">Ask Tek-Talk</a>
           </li>
         </ul>
       </div>

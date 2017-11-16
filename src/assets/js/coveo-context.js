@@ -4,7 +4,7 @@ function isCurrentPageSearchPage() {
 };
 document.addEventListener('DOMContentLoaded', function(){
 
-  CoveoOrganizationID = 'paloaltonetworksintranetsandbox1';
+  CoveoOrganizationID = 'paloaltonetworksintranet';
 
   Coveo.SearchEndpoint.endpoints['default'] = new Coveo.SearchEndpoint({
     restUri: 'https://platform.cloud.coveo.com/rest/search',
@@ -12,8 +12,7 @@ document.addEventListener('DOMContentLoaded', function(){
     queryStringArguments: {
       authentication : 'okta',
       organizationId: CoveoOrganizationID,
-      debug: 1,
-      pipleline: "Tek-Talk Search"
+      debug: 1
     },
   });
 
@@ -33,8 +32,10 @@ document.addEventListener('DOMContentLoaded', function(){
     var root = Coveo.$$(document).find("#searchbox");
 
     Coveo.initSearchbox(root, "tek-talkSearch.html");
-  };
 
+    // Coveo.initSearchbox(document.querySelector('#searchbox'), "tektalk-search.html");
+  };
+  
   if (coveoSearch) {
     coveoAngularAdapter();
 
@@ -63,6 +64,7 @@ document.addEventListener('DOMContentLoaded', function(){
       }
     });
   }
+
 
   Coveo.init(document.body, {
     Facet: {
